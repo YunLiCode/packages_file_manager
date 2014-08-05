@@ -19,9 +19,9 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.micode.fileexplorer"
+    package="com.yusun.filemanager"
     android:versionCode="1"
-    android:versionName="0.1" >
+    android:versionName="0.2" >
 
     <uses-sdk android:minSdkVersion="16" />
 
@@ -40,9 +40,9 @@
         android:theme="@android:style/Theme.Holo.Light"
         android:uiOptions="splitActionBarWhenNarrow">
         <activity
-            android:name=".FileExplorerTabActivity"
+            android:name="com.yusun.filemanager.FileExplorerTabActivity"
             android:configChanges="screenSize|keyboardHidden"
-            android:screenOrientation="sensor"
+            android:screenOrientation="portrait"
             android:theme="@style/Yun"
             android:uiOptions="splitActionBarWhenNarrow">
             <intent-filter >
@@ -70,7 +70,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".net.micode.fileexplorer.SearchActivity" >
+        <activity android:name=".net.micode.fileexplorer.SearchActivity"
+            android:screenOrientation="portrait" >
             <intent-filter >
                 <action android:name="android.intent.action.SEARCH" />
 
@@ -84,6 +85,7 @@
 
         <activity
             android:label="@string/menu_setting"
+            android:screenOrientation="portrait"
             android:launchMode="singleTop"
             android:name="FileExplorerPreferenceActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
@@ -93,7 +95,7 @@
             android:name="android.app.default_searchable"
             android:value=".SearchActivity" />
 
-        <service android:name=".FTPServerService" />
+        <service android:name="com.yusun.filemanager.FTPServerService" />
     </application>
 
 </manifest>
